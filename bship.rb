@@ -1,40 +1,41 @@
 require_relative "board.rb"
 
 
-class MyShips
-
-    def initialize(name, shipholes)
+class Ship
+    def initialize(size, name)
+        @size = size
         @name = name
-        @shipholes = shipholes
+        @hit_count = 0
     end
 
-    def name_ships(name)
-        @destroyer = MyShips.new(name = "Destroyer")
-        @cruiser = MyShips.new(name = "Cruiser")
-        @sub = MyShips.new(name = "Sub")
-        @bship = MyShips.new(name = "Battleship")
-        @carrier = MyShips.new(name = "Carrier")
+    def type_of_ship()
+        return @name
     end
 
-    def holes(name, shipholes)
-        @destroyer = 2
-        @cruiser = 3
-        @sub = 3
-        @bship = 4
-        @carrier = 5
+    def size_of_ship()
+        return @size
     end
 
+    def hitter()
+        return @hit_count
+    end
+
+    def take_a_hit()  
+        @hit_count += 1
+        p @hit_count
+        if @hit_count != @size
+            @ship_status = "You hit a ship!"
+        elsif @hit_count == @size
+            @ship_status = "You sank my #{name.capitalize}!"
+        end
+      
+    end
+
+    attr_reader :ship_status
+    attr_reader :ship
+    attr_reader :size
     attr_reader :name
-    attr_reader :shipholes
-
-
-    puts "#{@destroyer}"
-    puts "#{@cruiser}"
-    puts "#{@sub}"
-    puts "#{@bship}"
-    puts "#{@carrier}"
-
-
+    attr_reader :hit_count
 end
 
 
