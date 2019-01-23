@@ -1,54 +1,67 @@
-class MyBoard12
-    def initialize(cells = 144, board)
-        @cells = cells
-        @board = Array.new(cells) {Array.new(size) {Cells.new}}
-    end
-end
-
 class MyShips
+    attr_accessor :name, :shipholes
+
     def initialize(name, shipholes)
         @name = name
         @shipholes = shipholes
     end
 
-    def name_ships()
-        @destroyer = MyShips.new("Destroyer")
-        @cruiser = MyShips.new("Cruiser")
-        @sub = MyShips.new("Sub")
-        @battleship = MyShips.new("Battleship")
-        @carrier = MyShips.new("Carrier")
+    def name_ships(name)
+        @destroyer = MyShips.new(name = "Destroyer")
+        @cruiser = MyShips.new(name = "Cruiser")
+        @sub = MyShips.new(name = "Sub")
+        @bship = MyShips.new(name = "Battleship")
+        @carrier = MyShips.new(name = "Carrier")
     end
+
+    def holes(name, shipholes)
+        @destroyer = 2
+        @cruiser = 3
+        @sub = 3
+        @bship = 4
+        @carrier = 5
+    end
+
+
 end
 
+puts "#{@destroyer}"
+puts "#{@cruiser}"
+puts "#{@sub}"
+puts "#{@bship}"
+puts "#{@carrier}"
 
 
 
 
 
 
-    #     print "OWN BOARD\n"
-    #     print "--|\s1|\s2|\s3|\s4|\s5|\s6|\s7|\s8|\s9|10|11|12|\n"
-    #     print "\s1|\n\s2|\n\s3|\n\s4|\n\s5|\n\s6|\n\s7|\n\s8|\n\s9|\n10|\n11|\n12|\n---------------------------------------\n"
-    #     print "\n\n"
 
-    #     print "ENEMY BOARD\n"
-    #     print "--|\s1|\s2|\s3|\s4|\s5|\s6|\s7|\s8|\s9|10|11|12|\n"
-    #     print "\s1|\n\s2|\n\s3|\n\s4|\n\s5|\n\s6|\n\s7|\n\s8|\n\s9|\n10|\n11|\n12|\n---------------------------------------\n"
-    #     print "\n\n"
 
-    # @row = 1
-    # @col = 1
-    # while @row <= 12
-    #     @col = 1
-    #     while @col < 12
-    #         print " ~"
-    #         @col += 1
-    #         if @col == 12
-    #             print " ~\n"
-    #             @row += 1
-    #         end
-    #     end
-    # end
+
+        print "OWN BOARD\n"
+        print "--|\s1|\s2|\s3|\s4|\s5|\s6|\s7|\s8|\s9|10|11|12|\n"
+        print "\s1|\n\s2|\n\s3|\n\s4|\n\s5|\n\s6|\n\s7|\n\s8|\n\s9|\n10|\n11|\n12|\n---------------------------------------\n"
+        print "\n\n"
+
+        print "ENEMY BOARD\n"
+        print "--|\s1|\s2|\s3|\s4|\s5|\s6|\s7|\s8|\s9|10|11|12|\n"
+        print "\s1|\n\s2|\n\s3|\n\s4|\n\s5|\n\s6|\n\s7|\n\s8|\n\s9|\n10|\n11|\n12|\n---------------------------------------\n"
+        print "\n\n"
+
+    @row = 1
+    @col = 1
+    while @row <= 12
+        @col = 1
+        while @col < 12
+            print " ~"
+            @col += 1
+            if @col == 12
+                print " ~\n"
+                @row += 1
+            end
+        end
+    end
 
 
 
