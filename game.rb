@@ -17,7 +17,7 @@ end
 def show_board(x)
     countertop = 0
     print "  "
-    x.grid.each_with_index do |v, i|
+    x.board.each_with_index do |v, i|
         if countertop < 10
         print "  #{countertop}"
         countertop += 1
@@ -27,7 +27,7 @@ def show_board(x)
     end
     puts "\n"
     counter = 0
-    x.grid.each_with_index do |v, i|
+    x.board.each_with_index do |v, i|
         v.each_with_index do |k, i|
             if i == 0 
                 print " #{counter} #{k.to_s}"
@@ -46,17 +46,17 @@ def show_opp_board(m)
 end
 
 def hit_or_miss(m, replyrow, replycol)
-    if m.grid[replyrow.to_i][replycol.to_i].content.class == Ship
-        return m.grid[replyrow.to_i][replycol.to_i].content.ship_status
+    if m.board[replyrow.to_i][replycol.to_i].content.class == Ship
+        return m.board[replyrow.to_i][replycol.to_i].content.ship_status
     else
         return "Miss!"
     end
 end
 
-def game_ender(o, m)
+def game_ender(x, m)
     you_spots = 0
     enemy_spots = 0
-    x.grid.each do |row|
+    x.board.each do |row|
         row.each do |hole|
             if hole.status == "X"
                 you_spots += 1
@@ -64,7 +64,7 @@ def game_ender(o, m)
         end
     end
 
-    m.grid.each do |row|
+    m.board.each do |row|
         row.each do |hole|
             if hole.status == "X"
                 enemy_spots += 1
@@ -81,9 +81,9 @@ def game_ender(o, m)
     end
 end
 
-def begin_game(o, m, ai)
+def begin_game(x, m, enemy)
     intro = {ship1: "Carrier = 5", ship2: "Battleship = 4", ship3: "Cruiser = 3", ship4: "Sub = 3", ship5: "Destroyer = 2"} 
-    show_opp_board(m); show_board(o)
+    show_opp_board(m); show_board(m)
     intro.each_value do |v|
         p v
     end
@@ -93,14 +93,14 @@ def begin_game(o, m, ai)
             puts "What row would you want to place the #{v}?"; replyrow = gets.chomp.to_i
             puts "What column would you want to place the #{v}"; replycol = gets.chomp.to_i
             puts "would you like to place the ship vertical or horizontal?"; replyvert = gets.chomp
-            if o.master_func(Ship.new(v[-1].to_i,"(#{v[0]})"), replyrow, replycol, replyvert) != "Invalid Placement!"
+            if x.master_func(Ship.new(v[-1].to_i,"(#{v[0]})"), replyrow, replycol, replyvert) != "Invalid Placement!"
                 system('cls')
-                show_opp_board(m); show_board(o)
+                show_opp_board(m); show_board(x)
                 break
             end
         end
     end
-    ai.deploy_opp_ships()
+    enemy.deploy_opp_ships()
 
 
     x.grid.each do |row|
@@ -116,14 +116,14 @@ def begin_game(o, m, ai)
                 end
             end
                 sleep(3)
-                if game_ender(o, m) != true
+                if game_ender(x, m) != true
                     break
                 end
-            spot = o.pick_open_hole()
-            o.atk_hole(spot[0], spot[1])
+            spot = x.pick_open_hole()
+            x.atk_hole(spot[0], spot[1])
             system('cls')
-            show_opp_board(m); show_board(o)
-            if game_ender(o, m) != true
+            show_opp_board(m); show_board(x)
+            if game_ender(x, m) != true
                 break
             end
             
@@ -131,13 +131,13 @@ def begin_game(o, m, ai)
             puts "--------------------------------------"
             puts "now your turn!"
         end
-        if game_ender(o, m) != true
+        if game_ender(x, m) != true
             break
         end
     end
-    if game_ender(o, m) != true
-        puts game_ender(o, m)
+    if game_ender(x, m) != true
+        puts game_ender(x, m)
     end
 end
 # win_func()
-begin_game(o, m, ai)
+begin_game(x, m, enemy)

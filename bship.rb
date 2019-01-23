@@ -50,13 +50,13 @@ end
 
 
 
-
+# TENTATIVE PLAN.
 # My ship board and my firing board (enemy ships hidden)
 # I place my ships by choice ... only in horizontal and vertical
 # Enemy places ships by random ... "chooses" a point, than goes horizontal and vertical from there.
 # IMPORTANT: You may not place ships off the board. ... You may not place ships on same hole
 # Ships are carrier (5), Battleship (4), Cruiser (3), Sub (3), Destroyer (2)
-# Board is 12 rows, 12 columns
+# Board is 12 rows, 12 columns (or 24 or 36)
 # Hole numbers 1 through 12 by rows 1 through 12 by columns. 
 # Call row and column
 # Flip coin and see who goes first

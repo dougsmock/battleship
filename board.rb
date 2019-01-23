@@ -2,6 +2,7 @@ require_relative "bship.rb"
 
 class Board
     def initialize(size = 12, row, col)
+        hole = ""
         if hole == "you"
             @grid = Array.new(size) {Array.new(size) {Youhole.new}}
         elsif hole == "enemy"
