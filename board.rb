@@ -124,6 +124,7 @@ end
 #         print "\s#{@row}| #{@open}  #{@open}  #{@open}  #{@open}  #{@open}  #{@open}  #{@open}  #{@open}  #{@open}  #{@open}  #{@open}  ~\n"
 #         @row += 1
 #     end
+# end
 
 
 

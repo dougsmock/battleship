@@ -3,36 +3,30 @@ require_relative "holes.rb"
 require_relative "board.rb"
 require_relative "enemy_holes.rb"
 require_relative "enemy.rb"
-# puts "What size board would you like (a) 12x12, (b) 24x24, (c) 36x36?"
-# answer = gets.chomp
-# system('cls')
-# if answer == "a"
-#    x = Board.new(12, "you"); m = Board.new(12, "enemy"); enemy = Enemy.new(m, x)
-# elsif answer == "b"
-#    x = Board.new(24, "you"); m = Board.new(24, "enemy"); enemy = Enemy.new(m, x)
-# elsif answer == "c"
-#    x = Board.new(36, "you"); m = Board.new(36, "enemy"); enemy = Enemy.new(m, x)
-# end
 
-# SET UP 12-MAN BOARD. WILL ADAPT THIS TO 24 AND 36 IF SUCCESSFUL.
+class Board 
+    # SETS UP 12-MAN BOARD FOR YOU. WILL REPEAT FOR ENEMY.
+    x = Board.new(12, "you")
 
-x = Board.new(12, "you"); m = Board.new(12, "enemy"); enemy = Enemy.new(m, x)
+    board = ""
 
-def show_board(x)
-    countertop = 0
-    print "  "
-    x.board.each_with_index do |v, i|
-        if countertop < 10
-        print "  #{countertop}"
-        countertop += 1
-        else print " #{countertop}"
-            countertop += 1
+    def show_board(x)
+        countertop = 0
+        print "  "
+        x.board.each do |v, i|
+            if countertop < 10
+                print "  #{countertop}"
+                countertop += 1
+            else print " #{countertop}"
+                countertop += 1
+            end
         end 
     end
+
     puts "\n"
     counter = 0
-    x.board.each_with_index do |v, i|
-        v.each_with_index do |k, i|
+    x.each do |v, i|
+        v.each do |k, i|
             if i == 0 
                 print " #{counter} #{k.to_s}"
                 counter += 1   
@@ -45,9 +39,13 @@ def show_board(x)
     end
 end
 
-# def show_opp_board(m)
-#     show_board(m)
-# end
+def show_opp_board(m)
+    show_board(m)
+end
+
+puts "Something."
+yourboard = show_board(x)
+puts "#{yourboard}"
 
 # def hit_or_miss(m, replyrow, replycol)
 #     if m.board[replyrow.to_i][replycol.to_i].content.class == Ship
