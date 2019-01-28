@@ -1,91 +1,97 @@
-require_relative "board.rb"
+require_relative "ship.rb"
+require_relative "cell.rb"
+require_relative "enemy_cell.rb"
 
-
-class Ship
-    def initialize(size, name)
-        @size = size
-        @name = name
-        @hit_count = 0
-    end
-
-    def type_of_ship()
-        return @name
-    end
-
-    def size_of_ship()
-        return @size
-    end
-
-    def hitter()
-        return @hit_count
-    end
-
-    def take_a_hit()  
-        @hit_count += 1
-        p @hit_count
-        if @hit_count != @size
-            @ship_status = "You hit a ship!"
-        elsif @hit_count == @size
-            @ship_status = "You sank my #{name.capitalize}!"
+class Grid < Cell
+    def initialize(size = 12, cell)
+        if cell == "player"
+            @grid = Array.new(size) {Array.new(size) {Cell.new}}
+        elsif cell == "ai"
+            @grid = Array.new(size) {Array.new(size) {Enemycell.new}}
         end
-      
+        @size = size
+        @end_point = size - 1
     end
 
-    attr_reader :ship_status
-    attr_reader :ship
+    def place_ship(ship, row, col, pos)
+        ship.size.times do 
+            if pos == "horizontal"
+                self.grid[row][col].take(ship)
+                col += 1
+            else
+                self.grid[row][col].take(ship)
+                row += 1
+            end
+
+        end
+
+                
+    end
+
+    def atk_cell(row, col)
+        if row < @size && col < @size && row >= 0 && col >= 0
+            return @grid[row][col].if_hit()
+        else
+            return "invalid shot"
+        end
+
+    end
+
+    def pick_open_cell()
+        open_spot = []
+        @grid.each_with_index do |x, row|
+            x.each_with_index do |y, col|
+                if y.status == "open" || y.status == "taken"
+                    open_spot << [row, col]
+                end
+            end
+        end
+        return open_spot.sample
+    end
+
+
+    def err()
+        return "Invalid Placement!"
+    end
+
+    def check_location(ship, row, col, pos)
+        if pos == "horizontal"
+            col + ship.size < grid.length && (col < grid.length && row < grid.length) ? true : false
+        elsif pos == "vertical"
+            row + ship.size < grid.length && (col < grid.length && row < grid.length) ? true : false
+        else 
+            err()
+        end
+            
+    end
+
+    def check_spot(ship, row, col, pos)
+        ship.size.times do 
+            if self.grid[row][col].status != "open"
+               return false 
+            elsif pos == "horizontal"
+                col += 1
+            else
+                row += 1
+            end 
+        end
+       return true
+    end
+
+    def mastor_funk(ship, row, col, pos)
+        if check_location(ship, row, col, pos) == true && check_spot(ship, row, col, pos) == true
+            place_ship(ship, row, col, pos)
+        else 
+            err()
+        end
+
+    end
+    
+
+
+    attr_reader :start_point
+    attr_reader :grid
     attr_reader :size
-    attr_reader :name
-    attr_reader :hit_count
+    attr_reader :pos
+    attr_reader :end_point
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-# TENTATIVE PLAN.
-# My ship board and my firing board (enemy ships hidden)
-# I place my ships by choice ... only in horizontal and vertical
-# Enemy places ships by random ... "chooses" a point, than goes horizontal and vertical from there.
-# IMPORTANT: You may not place ships off the board. ... You may not place ships on same hole
-# Ships are carrier (5), Battleship (4), Cruiser (3), Sub (3), Destroyer (2)
-# Board is 12 rows, 12 columns (or 24 or 36)
-# Hole numbers 1 through 12 by rows 1 through 12 by columns. 
-# Call row and column
-# Flip coin and see who goes first
-# Alternate turns
-# Shots either hit water (miss) or hit ship 
-# My shots and enemy shots are recorded
-# If ship is hit, player will take next shot at adjacent hole
-# If a ship has all holes hit, it is sunk
-# "Sunk" totals are kept for each player
-# 5 "sunk" ships win the game 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

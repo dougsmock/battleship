@@ -16,19 +16,9 @@ require_relative "enemy.rb"
 #    o = Grid.new(36, "player"); m = Grid.new(36, "ai"); ai = Enemy.new(m, o)
 # end
 
-o = Grid.new(4, "player"); m = Grid.new(4, "ai"); ai = Enemy.new
+o = Grid.new(4, "player"); m = Grid.new(4, "ai"); ai = Enemy.new # new line
 
 def show_board(o)
-    countertop = 0
-    print "  "
-    o.grid.each_with_index do |v, i|
-        if countertop < 10
-        print "  #{countertop}"
-        countertop += 1
-        else print " #{countertop}"
-            countertop += 1
-        end 
-    end
     puts "\n"
     counter = 0
     o.grid.each_with_index do |v, i|
@@ -76,9 +66,9 @@ def game_ender(o, m)
         end
     end
 
-    if ai_spots == 14
+    if ai_spots == 2
         return "You Win!"
-    elsif player_spots == 14
+    elsif player_spots == 2
         return "You Lose"
     else 
         return true
@@ -86,23 +76,23 @@ def game_ender(o, m)
 end
 
 def begin_game(o, m, ai)
-    intro = {ship1: "Carrier = 5", ship2: "Battleship = 4", ship3: "cruiser = 3", ship4: "Submarine = 2"} 
+    intro = {ship1: "Destroyer = 2"} # clipped from 4 ships
     show_opp_board(m); show_board(o)
     intro.each_value do |v|
         p v
     end
 
     intro.each do |k, v|
-        while true
+            
             puts "What row would you want to place the #{v}?"; replyrow = gets.chomp.to_i
-            puts "What column would you want to place the #{v}";replycol = gets.chomp.to_i
-            puts "would you like to place the ship vertical or horizontal?"; replyvert = gets.chomp
-            if o.mastor_funk(Ship.new(v[-1].to_i,"(#{v[0]})"), replyrow, replycol, replyvert) != "Invalid Placement!"
+            puts "What column would you want to place the #{v}"; replycol = gets.chomp.to_i
+            puts "Would you like to place the ship vertical or horizontal?"; replyvert = gets.chomp
+            if o.mastor_funk(Grid.new(v[-1].to_i,"(#{v[0]})"), replyrow, replycol, replyvert) != "Invalid Placement!"
                 system('cls')
                 show_opp_board(m); show_board(o)
                 break
             end
-        end
+        
     end
     ai.deploy_opp_ships()
 

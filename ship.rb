@@ -4,8 +4,7 @@ require_relative "enemy_cell.rb"
 
 class Grid < Cell
     # def initialize(size = 12, cell)
-    def initialize(size = 4, cell) # new line
-
+    def initialize(size = 4, cell)
         if cell == "player"
             @grid = Array.new(size) {Array.new(size) {Cell.new}}
         elsif cell == "ai"
@@ -89,6 +88,7 @@ class Grid < Cell
 
     end
     
+
 
     attr_reader :start_point
     attr_reader :grid
