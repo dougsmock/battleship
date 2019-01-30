@@ -4,7 +4,7 @@ require_relative "enemy_cell.rb"
 
 class Grid < Cell
     # def initialize(size = 12, cell)
-    def initialize(size = 4, cell) # new line
+    def initialize(size = 4, cell) # new line for shorter game
 
         if cell == "player"
             @grid = Array.new(size) {Array.new(size) {Cell.new}}
@@ -26,8 +26,6 @@ class Grid < Cell
             end
 
         end
-
-                
     end
 
     def atk_cell(row, col)
