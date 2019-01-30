@@ -8,7 +8,7 @@ class Cell
     end
 
     def if_hit()
-        if @content.class == Ship
+        if @content.class == Grid # Instead of ship?
             @status = "X" 
             return @content.take_a_hit() 
         elsif @content == "(-)"

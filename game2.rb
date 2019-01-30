@@ -40,7 +40,7 @@ def show_opp_board(m)
 end
 
 def hit_or_miss(m, replyrow, replycol)
-    if m.grid[replyrow.to_i][replycol.to_i].content.class == Ship
+    if m.grid[replyrow.to_i][replycol.to_i].content.class == Grid
         return m.grid[replyrow.to_i][replycol.to_i].content.ship_status
     else
         return "Miss!"
