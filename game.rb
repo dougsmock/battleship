@@ -5,18 +5,16 @@ require_relative "enemy_cell.rb"
 require_relative "enemy.rb"
 
 
-# puts "what size of board do you choose? small [a], medium [b], large [c]"
-# answer = gets.chomp
-# system('cls')
-# if answer == "a"
-#    o = Grid.new(12, "player"); m = Grid.new(12, "ai"); ai = Enemy.new(m, o)
-# elsif answer == "b"
-#    o = Grid.new(24,"player"); m = Grid.new(24, "ai"); ai = Enemy.new(m, o)
-# else
-#    o = Grid.new(36, "player"); m = Grid.new(36, "ai"); ai = Enemy.new(m, o)
-# end
-
-o = Grid.new(4, "player"); m = Grid.new(4, "ai"); ai = Enemy.new
+puts "what size of board do you choose? small [a], medium [b], large [c]"
+answer = gets.chomp
+system('cls')
+if answer == "a"
+   o = Grid.new(12, "player"); m = Grid.new(12, "ai"); ai = Enemy.new(m, o)
+elsif answer == "b"
+   o = Grid.new(24,"player"); m = Grid.new(24, "ai"); ai = Enemy.new(m, o)
+else
+   o = Grid.new(36, "player"); m = Grid.new(36, "ai"); ai = Enemy.new(m, o)
+end
 
 def show_board(o)
     countertop = 0
@@ -50,7 +48,7 @@ def show_opp_board(m)
 end
 
 def hit_or_miss(m, replyrow, replycol)
-    if m.grid[replyrow.to_i][replycol.to_i].content.class == Ship
+    if m.grid[replyrow.to_i][replycol.to_i].content.class == Grid #Subbed for ship
         return m.grid[replyrow.to_i][replycol.to_i].content.ship_status
     else
         return "Miss!"
@@ -97,7 +95,7 @@ def begin_game(o, m, ai)
             puts "What row would you want to place the #{v}?"; replyrow = gets.chomp.to_i
             puts "What column would you want to place the #{v}";replycol = gets.chomp.to_i
             puts "would you like to place the ship vertical or horizontal?"; replyvert = gets.chomp
-            if o.mastor_funk(Ship.new(v[-1].to_i,"(#{v[0]})"), replyrow, replycol, replyvert) != "Invalid Placement!"
+            if o.mass_func(Grid.new(v[-1].to_i,"(#{v[0]})"), replyrow, replycol, replyvert) != "Invalid Placement!"
                 system('cls')
                 show_opp_board(m); show_board(o)
                 break
@@ -146,13 +144,3 @@ end
 # win_func()
 begin_game(o, m, ai)
 
-
-
-
-
-# coin = ["Enemy goes first.", "You go first."]
-# coiny = coin.shuffle
-# p coiny[0]
-
-
- 

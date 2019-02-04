@@ -16,7 +16,7 @@ require_relative "enemy.rb"
 #    o = Grid.new(36, "player"); m = Grid.new(36, "ai"); ai = Enemy.new(m, o)
 # end
 
-o = Grid.new(4, "player"); m = Grid.new(4, "ai"); ai = Enemy.new # new line
+o = Grid.new(12, "player"); m = Grid.new(12, "ai"); ai = Enemy.new # new line
 
 def show_board(o)
     puts "\n"
@@ -87,7 +87,7 @@ def begin_game(o, m, ai)
             puts "What row do you want to place the #{v}?"; replyrow = gets.chomp.to_i
             puts "What column do you want to place the #{v}"; replycol = gets.chomp.to_i
             puts "Place the ship vertical or horizontal?"; replyvert = gets.chomp
-            if o.mastor_funk(Grid.new(v[-1].to_i,"(#{v[0]})"), replyrow, replycol, replyvert) != "Invalid Placement!"
+            if o.mass_func(Grid.new(v[-1].to_i,"(#{v[0]})"), replyrow, replycol, replyvert) != "Invalid Placement!"
                 system('cls')
                 show_opp_board(m); show_board(o)
                 break

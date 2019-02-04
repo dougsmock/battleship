@@ -1,10 +1,10 @@
 require_relative "ship.rb"
 require_relative "cell.rb"
+require_relative "enemy.rb"
 require_relative "enemy_cell.rb"
 
 class Grid < Cell
-    # def initialize(size = 12, cell)
-    def initialize(size = 4, cell)
+    def initialize(size = 12, cell)
         if cell == "player"
             @grid = Array.new(size) {Array.new(size) {Cell.new}}
         elsif cell == "ai"
@@ -23,10 +23,7 @@ class Grid < Cell
                 self.grid[row][col].take(ship)
                 row += 1
             end
-
         end
-
-                
     end
 
     def atk_cell(row, col)
@@ -79,7 +76,7 @@ class Grid < Cell
        return true
     end
 
-    def mastor_funk(ship, row, col, pos)
+    def mass_func(ship, row, col, pos)
         if check_location(ship, row, col, pos) == true && check_spot(ship, row, col, pos) == true
             place_ship(ship, row, col, pos)
         else 
@@ -88,8 +85,6 @@ class Grid < Cell
 
     end
     
-
-
     attr_reader :start_point
     attr_reader :grid
     attr_reader :size
