@@ -5,7 +5,7 @@ class Game
 
 	attr_reader :player, :opponent, :targeting_queue
 
-# asks player to entere name, choose difficulty of small, medium or large
+# asks player to enter name, choose difficulty of small, medium or large
 	def set_player
 		player = ""
 		while player.empty? do
@@ -40,6 +40,10 @@ class Game
 		puts
 		@player1 = Player.new(player, difficulty)
 	end
+
+
+	## BUILD A FUNCTION TO FOLLOW AN OPPONENT HIT WITH ADJACENT HOLES.
+
 
 	def set_opponent
 		difficulty = @difficulty
@@ -79,7 +83,7 @@ class Game
 				reply_direction
 				reply_row = ""
 				while reply_row.empty? do
-					print "What Row would you like to place your #{ship.type.capitalize} ship? " 
+					print "What Row would you like to place your #{ship.type.capitalize}? " 
 					reply_row = gets.chomp
 					if @player1.board.grid_row.include?(reply_row.strip.upcase) == true
 						reply_row = reply_row.strip.upcase
@@ -90,7 +94,7 @@ class Game
 				reply_row
 				reply_column = ""
 				while reply_column.empty? do
-					print "What Column would you like to place your #{ship.type.capitalize} ship? " 
+					print "What Column would you like to place your #{ship.type.capitalize}? " 
 					reply_column = gets.chomp
 					if @player1.board.grid_column.include?(reply_column.strip) == true
 						reply_column = reply_column.strip
@@ -210,6 +214,7 @@ class Game
 	end
 
 # replace the system clear, keeping it commented out right now to see previous screen for debugging
+
   	def boards_set
   		self.player1_add_ships
   		self.place_opponent_ships
@@ -247,6 +252,8 @@ def player_round
 		redo if @opponent.board.cell_coordinates(coordinates[0], coordinates[1]).status == "0"
 		redo if @opponent.board.cell_coordinates(coordinates[0], coordinates[1]).status == "X"
 
+        # LOOK THIS OVER!
+        
 		if @opponent.board.cell_coordinates(coordinates[0], coordinates[1]).status == "."
 			system('cls')
 			puts
@@ -256,7 +263,7 @@ def player_round
 			@opponent.board.cell_coordinates(coordinates[0], coordinates[1]).miss
 		else
 			valid = false
-			if @opponent.board.cell_coordinates(coordinates[0], coordinates[1]).status.type == :battleship
+			if @opponent.board.cell_coordinates(coordinates[0], coordinates[1]).status.type == :carrier
 				system('cls')
 				@opponent.board.cell_coordinates(coordinates[0], coordinates[1]).hit
 				@opponent.carrier.hit
@@ -271,7 +278,7 @@ def player_round
 					puts
 				end
 				self.show_boards
-			elsif @opponent.board.cell_coordinates(coordinates[0], coordinates[1]).status.type == :cruiser
+			elsif @opponent.board.cell_coordinates(coordinates[0], coordinates[1]).status.type == :battleship
 				system('cls')
 				@opponent.board.cell_coordinates(coordinates[0], coordinates[1]).hit				
 				@opponent.battleship.hit
@@ -319,6 +326,42 @@ def player_round
 	end
 end
 	
+############# This will be player1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+################################################
+
 # changes the easily entered coordinate of A1 into "A, 1" for the program to read
 def coordinates2array(coordinates)
 		row = ""
@@ -358,7 +401,6 @@ def coordinates2array(coordinates)
 			puts
 			print "********** Your Enemy's Turn **********"
 			puts
-			puts
 			
 			target_coords = @targeting_queue.pop 
 			player1_coord = @player1.board.cell_coordinates(target_coords[0], target_coords[1])
@@ -374,10 +416,10 @@ def coordinates2array(coordinates)
 			else
 				print "Hit!"
 				puts
-				if player1_coord.status.type == :battleship
+				if player1_coord.status.type == :carrier
 					player1_coord.hit
 					@player1.carrier.hit
-				elsif player1_coord.status.type == :cruiser
+				elsif player1_coord.status.type == :battleship
 					player1_coord.hit
 					@player1.battleship.hit
 				elsif player1_coord.status.type == :submarine
@@ -414,7 +456,8 @@ def coordinates2array(coordinates)
   				game_over = true
   			end
   		end
-  		print "#{winner} Wins Battleship!!"
+		puts  
+		print "#{winner} Wins Battleship!!"
   	end
 
   	def play

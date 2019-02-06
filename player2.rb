@@ -1,6 +1,5 @@
 require_relative "board2.rb"
 
-
 class Player
     def initialize(player, difficulty)
 		@player = player
@@ -13,7 +12,7 @@ class Player
 		@ships_left = Board::SHIPS_LEFT
 	end
 
-	attr_reader :player, :board, :battleship, :cruiser, :submarine, :destroyer, :coordinates_to_play
+	attr_reader :player, :board, :carrier, :battleship, :submarine, :destroyer, :coordinates_to_play
 
 	attr_accessor :ships_left
 
@@ -66,13 +65,4 @@ class Player
  		@player.capitalize
  	end
 
-end
-
-
-
-
-
-
-
-
-end
+end 
