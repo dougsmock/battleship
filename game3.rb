@@ -41,15 +41,11 @@ class Game
 		@player1 = Player.new(player, difficulty)
 	end
 
-
-	## (BUILD A FUNCTION TO FOLLOW AN OPPONENT HIT WITH ADJACENT HOLES.)
-
-
 	def set_opponent
 		difficulty = @difficulty
 		@opponent = Player.new("Enemy", difficulty)
 		@targeting_queue = @opponent.coordinates_to_play.shuffle
-		print "Begin Game: #{@player1} VS #{@opponent}, #{difficulty.capitalize} Level."
+		print "Begin Game: #{@player1} vs. #{@opponent}, #{difficulty.capitalize} Level."
 		puts
 		puts
 	end
@@ -213,7 +209,7 @@ class Game
 		@opponent.show_opponent_board
 	end
 
- # replace the system clear, keeping it commented out right now to see previous screen for debugging
+ # ##
 
   	def boards_set
   		self.player1_add_ships
@@ -261,8 +257,6 @@ class Game
 				@opponent.board.cell_coordinates(coordinates[0], coordinates[1]).miss
 			else
 				valid = false
-			
-				######### COPY AND RENAME TO PLAYER1	
 			
 				if @opponent.board.cell_coordinates(coordinates[0], coordinates[1]).status.type == :carrier
 				system('cls')
@@ -444,7 +438,8 @@ class Game
   			self.show_boards
   			if @player1.ships_left == 0
   				winner = @opponent
-  				game_over = true
+				game_over = true
+				next
   			end
   		end
 		puts  
