@@ -2,11 +2,18 @@
 
 <h4>"Directions: Choose a grid, smaller (12x12), larger (24x24) and huge (36x36). Place your ships as directed, staying within the grid."</h4>
 
-<h4>"After placing your ships, begin firing! A blue square means a miss and a red square equals a hit. Your enemy is randomly firing at your ships, so be accurate! Advice: Do not waste a move by hitting a colored square; it will be a wasted move."</h4>
+<h4>"After placing your ships, begin firing! A blue square means a miss and a red square equals a hit. Your enemy is randomly firing at your ships, so be accurate! Advice: Do not waste a move by hitting a colored square!"</h4>
 
 <h4>"If you sink all four of your enemy's ships (14 hits in all), you win!"</h4>
 
-<input type="submit" class="button_smaller" value="Smaller grid">
-<input type="submit" class="button_larger" value="Larger grid">
-<input type="submit" class="button_huge" value="Huge grid">
+<form method="post" action="size1">
+<input type="submit" name="size1" class="button_smaller" value="Smaller grid">
+</form>
 
+<form method="post" action="size2">
+<input type="submit" name="size2" class="button_larger" value="Larger grid">
+</form>
+
+<form method="post" action="size3">
+<input type="submit" name="size3" class="button_huge" value="Huge grid">
+</form>
