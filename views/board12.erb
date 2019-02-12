@@ -1,3 +1,5 @@
+<body>
+
 <style>
   .tg  
   {border-collapse:collapse;
@@ -27,7 +29,7 @@
   overflow:hidden;
   word-break:normal;
   background-color: green;
-  border-color:black;}
+  border-color:white;}
   
   .tg .tg-s268
   {text-align:center}
@@ -49,26 +51,69 @@
   overflow:hidden;
   word-break:normal;
   background-color: green;
-  border-color:black;
+  border-color:white;
   text-align:center;
   vertical-align:center;}
 
   .square 
-  {background-color: rgb(169, 169, 150);}
+  {background-color: rgb(169, 169, 150);
+  border-color:white;
+  font-weight:bolder;}
 
   .button1
-  {width: 14px;
-  height: 100%;
+  {width: 10px;
   color: transparent; 
   background-color: rgb(169, 169, 150); 
-  border-color: transparent; 
-  cursor: default;}
+  border-color: transparent;
+  border: black;}
+
+
+/* Create a custom radio button */
+/* .button1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  width: 8px;
+  background-color: rgb(77, 72, 72);
+  border-radius: 50%;
+} */
+
+/* On mouse-over, add a background color */
+/* .button:hover input ~ .checkmark { */
+  /* background-color: rgb(99, 4, 4); */
+}
+
+/* When the radio button is checked, add a blue background */
+/* .button input:checked ~ .checkmark {
+  background-color: #2196F3; */
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+/* .checkmark:after { */
+  /* content: "";
+  position: absolute;
+  display: none; */
+}
+
+/* Show the indicator (dot/circle) when checked */
+/* .container input:checked ~ .checkmark:after {
+  display: block; */
+}
+
+/* Style the indicator (dot/circle) */
+/* .button .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+} */
+
+
+
   </style>
-
-
-
-  
-
 
   <h1>Enemy board</h1>
   <h4>Hits remaining: 14</h4>
@@ -90,186 +135,184 @@
     </tr>
     <tr>
       <td class="col-format"><b>A</b></td>
-      <td class="square"><input type="submit" style="width:8px; height:10px; color: transparent; background-color: transparent; border-color: transparent; cursor: grab;"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-    </tr>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     <tr>
       <td class="col-format"><b>B</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>C</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>D</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>E</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>F</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>G</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>H</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>I</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>J</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>K</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>L</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
   </table>
-
 
   <h1>Home board</h1>
   <h4>Hits remaining: 14</h4>
@@ -291,184 +334,201 @@
     </tr>
     <tr>
       <td class="col-format"><b>A</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>B</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>C</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>D</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>E</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>F</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>G</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>H</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>I</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>J</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>K</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
     </tr>
     <tr>
       <td class="col-format"><b>L</b></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
-      <td class="square"></td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square">~</td>
+      <td class="square2"></td>
     </tr>
   </table>
 
   <!-- End of 12 home table -->
+
+</body>
+
+
+
+
+
+
+
+<!-- <script>
+    document.getElementsByClassName('button1').onclick = changeColor;   
+
+    function changeColor() {
+        document.body.style.color = "red";
+        return false;
+    }   
+</script> -->
