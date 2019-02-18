@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <script src="/js/bs.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/bs3.css">
+    </head>
+    <body onload="removeElement(); changeText(); endGame();">
+        <center>
+         <form method="post" action="/size1">
+            <div class="player_container">
+            <table id="mytable">
+                <tr>
+                <th> </th>
+                <%board.grid.size.times do |v|%>
+                <th><%=v%></th>
+                <%end%>
+                </tr>
+           
+                <%board.grid.each_with_index do |v, i|%>
+                    <tr>
+                    <th><font size="2"><%=i%></th>
+                        <%v.each_with_index do |k, o|%>
+                            <td class='grid_cell'><input type='radio' class='grid_button' id="gridbutton<%="#{i},#{o}"%>" name="grid_cell[]" value='<%=[i, o]%>' >
+                            <label class="label" for="gridbutton<%="#{i},#{o}"%>"><%=k%></label></td>
+                        <%end%>
+                    </tr>
+                <%end%>  
+            </div>
+            </table>
+            </div>
+
+            <div class="enemyboard">
+            <table id="enemytable">
+                <tr>
+                <th> </th>
+                <%enemyboard.grid.size.times do |v|%>
+                <th><%=v%></th>
+                <%end%>
+                </tr>
+           
+                <%enemyboard.grid.each_with_index do |v, i|%>
+                    <tr>
+                    <th><%=i%></th>
+                        <%v.each_with_index do |k, o|%>
+                            
+                             <td class='grid_cell'><input type='radio' class='enemygrid_button' id="enemygrid_button<%="#{i},#{o}"%>" name="enemygrid_cell[]" value='<%=[i, o]%>' >
+                            <label for="enemygrid_button<%="#{i},#{o}"%>"><%=k%></label></td>
+                        <%end%>
+                    </tr>
+                <%end%>    
+                </div>
+
+            </table>  
+            <div class="hitormiss" id="hitter">
+
+                
+                    <%=hitter%>
+                
+
+                <%=game_ender(board, enemyboard)%>
+
+            </div>          
+
+            <div class="coordinates">
+            <%# <font color="red"><h4> row<br>coordinate</h4></font>
+                <input type="number" name="row" placeholder="row" min="0" required>
+                 <font color="red"><h4>column<br>coordinate</h4></font>
+                <input type="number" name="col" placeholder="column" min="0" required> %>
+                 <font id="HV" color="red"><h4>horizontal<br>vertical</h4></font>
+                <select name="pos" id="pos">
+                    <option id="pos"  value="horizontal">Horizontal</option>
+                    <option id="pos"  value="vertical">Vertical</option>
+                </select>
+                    <br>
+                <input type='hidden' name='ship_num' value='<%=ship_num%>' id="ship_num">
+                <div class="err"><font id="err"color="red"><%=err%></font></div>
+                <div class="fire_err"><font id="fire_err"color="red"><%=fire_err%></font></div>
+
+                <br><br>
+                <button class=" button">Enter</button>
+            </div>
+
+        </center>
+
+       
+        </form>
+
+           <div class="stopwatch" id="stopwatch">
+                <h3><font color="red"><span id="seconds">00</span>:<span id="tens">00</span></h3></font>
+                <button onclick="stopWatch()"id="start">Start</button>
+                    <br>
+                    <br>
+                <button onclick="stopWatch()" id="stop">Stop</button>
+                    <br>
+                    <br>
+                <button onclick="stopWatch()" id="reset">Redo</button>
+            </div>
+
+
+            <div class="mdlbtn">
+            <button class="button2" id="bBtn2" onclick ="showModall()">How 2 Play</button>
+        </div>
+        <div id="bModal2" class="bmodal" onclick="winModd(event)">
+            <div class="bsinfo">
+                <span class="closeIt2" onclick="onModall()">&times;</span>
+                <h4><p>You will place the ships in order of largest to smallest.
+                    Carrier = 5, Battleship = 4, Cruiser = 3, Submarine = 2.
+                    you can use either grid for placing your ships & firing(you can't shoot your grid!).
+                    simply click one of the grids(your choice) and then hit enter.
+                    there is a dropdown box for placing only! It has the contents of horizontal or vertical.
+                    If you don't pick a spot to fire from your grid or the enemy's and hit enter the enemy
+                    will still fire on your grid(the enemy takes this very seriously!) Remember the whole goal is to sink the enemy ships.
+                     you can use both grids or one grid
+                     Have fun playing it!</p></h4>
+            </div>
+        </div>        
+
+        <div class="start">
+    <font id="texty" color="red">Place your ships!</font>
+        </div>
+
+
+        <div class="specify">
+        <p>you</p>
+        </div>
+
+        <div class="specify2">
+        <p>enemy </p>
+        </div>
+        
+
+    </body> 
+
+</html>   
