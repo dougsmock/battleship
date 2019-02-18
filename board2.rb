@@ -13,7 +13,7 @@ class Board
 
 	SHIPS_LEFT = 4
 
-    def initialize(difficulty)
+  def initialize(difficulty)
 		@difficulty = difficulty
 		@grid_size = GRID_SIZE[difficulty]
 		@grid_row = ROW.take(@grid_size)

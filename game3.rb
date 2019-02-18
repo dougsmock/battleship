@@ -5,7 +5,7 @@ class Game
 
 	attr_reader :player, :opponent, :targeting_queue
 
- # asks player to enter name, choose difficulty of small, medium or large
+ # asks player to enter name, choose small, medium or large
 	def set_player
 		player = ""
 		while player.empty? do

@@ -5,8 +5,8 @@
   {border-collapse:collapse;
   border-spacing:0;}
   
-  .tg td
-  {font-family:'Times New Roman', Times, serif;
+  .tg td {
+  font-family:'Times New Roman', Times, serif;
   font-size:14px;
   column-width: 12px;
   line-height: 0.6;
@@ -15,10 +15,11 @@
   border-width:2px;
   overflow:hidden;
   word-break:normal;
-  border-color:black;}
+  border-color:black;
+  }
   
-  .tg th
-  {font-family:'Times New Roman', Times, serif;
+  .tg th {
+  font-family:'Times New Roman', Times, serif;
   font-size:14px;
   color: white;
   column-width: 12px;
@@ -29,17 +30,14 @@
   overflow:hidden;
   word-break:normal;
   background-color: green;
-  border-color:white;}
+  border-color:white;
+  }
   
   .tg .tg-s268
   {text-align:center}
   
-  .tg .square
-  {text-align:center;
-  vertical-align:center;}
-
-  .tg .col-format
-  {font-family:'Times New Roman', Times, serif;
+  .tg .col-format {
+  font-family:'Times New Roman', Times, serif;
   font-size:14px;
   font-weight:normal;
   color: white;
@@ -53,69 +51,43 @@
   background-color: green;
   border-color:white;
   text-align:center;
-  vertical-align:center;}
-
-  .square 
-  {background-color: rgb(169, 169, 150);
-  border-color:white;
-  font-weight:bolder;}
-
-  .button1
-  {width: 10px;
-  color: transparent; 
-  background-color: rgb(169, 169, 150); 
-  border-color: transparent;
-  border: black;}
-
-
-/* Create a custom radio button */
-/* .button1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 8px;
-  width: 8px;
-  background-color: rgb(77, 72, 72);
-  border-radius: 50%;
-} */
-
-/* On mouse-over, add a background color */
-/* .button:hover input ~ .checkmark { */
-  /* background-color: rgb(99, 4, 4); */
+  vertical-align:center;
 }
 
-/* When the radio button is checked, add a blue background */
-/* .button input:checked ~ .checkmark {
-  background-color: #2196F3; */
+  .tg .square {
+  background-color: rgb(169, 169, 150);
+  border: 2px solid #000000;
+  padding:8px 6px 6px 6px;
+  column-width: 12px;
+  cursor:pointer;
+  line-height: 0.6;
+  transition: background-color .2s ease-in;
+  }
+
+  .button1 {
+  border: 0px solid #000000;
+  background-color: rgb(169, 169, 150);
+  padding: 10px 10px;
+  column-width: 12px;
+  cursor:pointer;
+  border-radius: 70%;
+  transition: background-color .2s ease-in; 
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
-/* .checkmark:after { */
-  /* content: "";
-  position: absolute;
-  display: none; */
+.tg .square:hover {
+    background-color: black;    
 }
 
-/* Show the indicator (dot/circle) when checked */
-/* .container input:checked ~ .checkmark:after {
-  display: block; */
+.tg .button1:hover {
+    background-color: red;    
 }
 
-/* Style the indicator (dot/circle) */
-/* .button .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-} */
+.tg .button1:onclick {
+    background-color: black;
+}
+</style>
 
-
-
-  </style>
-
-  <h1>Enemy board</h1>
+ <h1>Enemy board</h1>
   <h4>Hits remaining: 14</h4>
   <table class="tg">
     <tr>
@@ -135,400 +107,408 @@
     </tr>
     <tr>
       <td class="col-format"><b>A</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     <tr>
       <td class="col-format"><b>B</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>C</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>D</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>E</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>F</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>G</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>H</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>I</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>J</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>K</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
     <tr>
       <td class="col-format"><b>L</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
+      <td class="square" name="btn" value="none"></td>
     </tr>
   </table>
+
+<!-- /* enemy board above, home board below */ -->
 
   <h1>Home board</h1>
   <h4>Hits remaining: 14</h4>
   <table class="tg">
     <tr>
       <th class="tg-s268"></th>
-      <th class="square">1</th>
-      <th class="square">2</th>
-      <th class="square">3</th>
-      <th class="square">4</th>
-      <th class="square">5</th>
-      <th class="square">6</th>
-      <th class="square">7</th>
-      <th class="square">8</th>
-      <th class="square">9</th>
-      <th class="square">10</th>
-      <th class="square">11</th>
-      <th class="square">12</th>
+      <th class="tg-s268">1</th>
+      <th class="tg-s268">2</th>
+      <th class="tg-s268">3</th>
+      <th class="tg-s268">4</th>
+      <th class="tg-s268">5</th>
+      <th class="tg-s268">6</th>
+      <th class="tg-s268">7</th>
+      <th class="tg-s268">8</th>
+      <th class="tg-s268">9</th>
+      <th class="tg-s268">10</th>
+      <th class="tg-s268">11</th>
+      <th class="tg-s268">12</th>
     </tr>
     <tr>
       <td class="col-format"><b>A</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>B</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>C</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>D</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>E</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>F</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>G</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>H</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>I</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>J</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>K</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
     <tr>
       <td class="col-format"><b>L</b></td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square">~</td>
-      <td class="square2"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
+      <td input class="button1" type="btn" value="test"></td>
     </tr>
   </table>
-
-  <!-- End of 12 home table -->
-
+<br><br>
+Place ships in this order: Destroyer (2 holes), submarine (3), battleship (4), carrier (5). Diagonal alignments are illegal.
 </body>
 
 
 
+<!-- <% %>
+<% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %><% %> -->
+
+
+
+<script>
+  function myFunction() {
+    document.getElementByClassName("button1").style.color = "black";
+  }
+</script>
+
+
+<!-- End of 12 home table -->
+<!-- Green for 2, blue for 3, yellow for 4, purple for 5. -->
 
 
 
 
-<!-- <script>
-    document.getElementsByClassName('button1').onclick = changeColor;   
-
-    function changeColor() {
-        document.body.style.color = "red";
-        return false;
-    }   
-</script> -->
+<!-- 
